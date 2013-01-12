@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[BFS The World]]></title>
-  <link href="http://tangyao0792.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ProjectEular | BFS The World]]></title>
+  <link href="http://tangyao0792.github.com/blog/categories/projecteular/atom.xml" rel="self"/>
   <link href="http://tangyao0792.github.com/"/>
   <updated>2013-01-13T00:13:53+08:00</updated>
   <id>http://tangyao0792.github.com/</id>
@@ -25,37 +25,6 @@
 <p>让我想对思维感兴趣的是《按时间》上推荐的一本书，《How to solve it》(G.波利亚)，书里以初中的数学为例，介绍应该如何思考问题的方法。最早的数学是人们思维的游戏，尤其是数论，只是在近代才有了密码学这样的应用.很多人研究数论的问题，完全是沉浸在思维的乐趣之中。而以数学去反思思维，能最大程度屏蔽掉外界的干扰，注意力只放在单纯的数字之上。</p>
 
 <p>博客的第二个catagory就是欧拉计划的题解了，也不能算是题解，因为我已经不是acmer了，而且记下的更多的是思考的过程。代码会放在github上，语言可能是有很多,先以py为主。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://tangyao0792.github.com/blog/2013/01/12/hello-world/"/>
-    <updated>2013-01-12T00:25:00+08:00</updated>
-    <id>http://tangyao0792.github.com/blog/2013/01/12/hello-world</id>
-    <content type="html"><![CDATA[<p>test:</p>
-
-<h1>Hello world</h1>
-
-<h2>Hello world</h2>
-
-<h3>Hello world</h3>
-
-<h4>Hello world</h4>
-
-<h5>Hello world</h5>
-
-<h6>Hello world</h6>
-
-<p>中文测试：</p>
-
-<p><em>哈罗渥德</em>  <br/>
-<strong>哈罗渥德</strong>  <br/>
-<strong><em>哈罗渥德</em></strong></p>
-
-<p>octopress搭完。看来除了ubuntu中字体比较丑之外没有不满意的地方了，下一步是把首页弄一下，有时间用js做个什么有意思的东西放上去。。</p>
-
-<p><em>这篇helloworld本是7月写完发到github pages，当时只是图好玩研究的jekyll，没有坚持.现在是2013年1月，不管是找工作还是继续读书，需要积累的东西都还有很多，所以重新clone了当时的git，这次是真正开始写博客了。</em></p>
 ]]></content>
   </entry>
   
