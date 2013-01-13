@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello World - BFS The World</title>
+  <title>人人发状态脚本 - BFS The World</title>
   <meta name="author" content="Tang Yao">
 
   
-  <meta name="description" content="test: Hello world Hello world Hello world Hello world Hello world Hello world 中文测试： 哈罗渥德 哈罗渥德 哈罗渥德 octopress搭完。看来除了ubuntu中字体比较丑之外没有不满意的地方了，下一步是把首页弄一下 &hellip;">
+  <meta name="description" content="几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。 登陆很容易就实现了。发状态的功能之前3g版的脚本思路是找到form，把该填的内容自己urlencode,然后post去action的地址; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tangyao0792.github.com/blog/2013/01/12/hello-world/">
+  <link rel="canonical" href="http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +71,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello World</h1>
+      <h1 class="entry-title">人人发状态脚本</h1>
     
     
       <p class="meta">
@@ -87,7 +87,7 @@
   
 
 
-<time datetime="2013-01-12T00:25:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
+<time datetime="2013-01-13T10:25:00+08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
         
         
       </p>
@@ -95,29 +95,31 @@
   </header>
 
 
-<div class="entry-content"><p>test:</p>
+<div class="entry-content"><p>几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。</p>
 
-<h1>Hello world</h1>
+<p>登陆很容易就实现了。发状态的功能之前3g版的脚本思路是找到form，把该填的内容自己urlencode,然后post去action的地址;网页版不同的地方是网页版的html源码很复杂，submit还会调js。</p>
 
-<h2>Hello world</h2>
+<p>尝试一：用python的mechanize库模拟浏览器，返回405失败。
+原因应该就是js，简单的提交form的内容，不是合法的数据。</p>
 
-<h3>Hello world</h3>
+<p>尝试二：抓包分析，看看浏览器究竟发送什么东西。</p>
 
-<h4>Hello world</h4>
+<p> 发状态的抓包结果摘录如下:</p>
 
-<h5>Hello world</h5>
+<pre><code>Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+content=whereareyou&amp;hostid=466114025&amp;requestToken=250857259&amp;_rtk=dab4c585&amp;channel=renren
+HTTP/1.1 200 OK
+</code></pre>
 
-<h6>Hello world</h6>
+<p>content一行就是我们需要完整发送的东西，可以猜测hostid是每个人人用户对应的一个id，requestToken和_rkt就是我们自己post form数据时缺少的内容，所以发送状态没有成功。在网页的html源码里,有个js脚本中正好有我的requestToken和_rtk的值,可以猜测它就是每次浏览器submit添加进的。那么我们只要自己解析登录之后网页的html源码，找到这两个值，发状态时添加进去，状态就成功发送了。</p>
 
-<p>中文测试：</p>
+<p>现在回顾一下这次脚本编写的思路：</p>
 
-<p><em>哈罗渥德</em>  <br/>
-<strong>哈罗渥德</strong>  <br/>
-<strong><em>哈罗渥德</em></strong></p>
+<p>尝试简单post表单中内容，发现失败，原因是发送的内容缺少一些信息; 那么缺少什么信息呢？抓包看到的，发现有一些隐藏的信息也需要发送过去，加上之后，成功发送。</p>
 
-<p>octopress搭完。看来除了ubuntu中字体比较丑之外没有不满意的地方了，下一步是把首页弄一下，有时间用js做个什么有意思的东西放上去。。</p>
-
-<p><em>这篇helloworld本是7月写完发到github pages，当时只是图好玩研究的jekyll，没有坚持.现在是2013年1月，不管是找工作还是继续读书，需要积累的东西都还有很多，所以重新clone了当时的git，这次是真正开始写博客了。</em></p>
+<p>py代码:<a href="https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py">https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py</a></p>
 </div>
 
 
@@ -140,15 +142,21 @@
   
 
 
-<time datetime="2013-01-12T00:25:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
+<time datetime="2013-01-13T10:25:00+08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techniques/'>Techniques</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tangyao0792.github.com/blog/2013/01/12/hello-world/" data-via="" data-counturl="http://tangyao0792.github.com/blog/2013/01/12/hello-world/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/" data-via="" data-counturl="http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/" >Tweet</a>
   
   
   
@@ -157,8 +165,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/01/12/start-project-euler/" title="Previous Post: Start Project Euler">&laquo; Start Project Euler</a>
       
-        <a class="basic-alignment right" href="/blog/2013/01/12/start-project-euler/" title="Next Post: Start Project Euler">Start Project Euler &raquo;</a>
       
     </p>
   </footer>

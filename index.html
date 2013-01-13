@@ -9,7 +9,7 @@
   <meta name="author" content="Tang Yao">
 
   
-  <meta name="description" content="喜欢思考，才能聪明。 自己的思维方式太过混乱，遇到问题没有一套系统的通用的思考方式，只会乱猜乱碰，也许这就是我和那些聪明的人的差距吧。开始做 projecteuler.net 上的数学题，遇到一些能够有所思考的题，记录下来。又开始刷题的目的很简单，就是思考。以前刷题的目的是过题， &hellip;">
+  <meta name="description" content="几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。 登陆很容易就实现了。发状态的功能之前3g版的脚本思路是找到form，把该填的内容自己urlencode,然后post去action的地址; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,77 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/">人人发状态脚本</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-13T10:25:00+08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
+        
+        
+          | 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/techniques/'>Techniques</a>
+  
+</span>
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。</p>
+
+<p>登陆很容易就实现了。发状态的功能之前3g版的脚本思路是找到form，把该填的内容自己urlencode,然后post去action的地址;网页版不同的地方是网页版的html源码很复杂，submit还会调js。</p>
+
+<p>尝试一：用python的mechanize库模拟浏览器，返回405失败。
+原因应该就是js，简单的提交form的内容，不是合法的数据。</p>
+
+<p>尝试二：抓包分析，看看浏览器究竟发送什么东西。</p>
+
+<p> 发状态的抓包结果摘录如下:</p>
+
+<pre><code>Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+content=whereareyou&amp;hostid=466114025&amp;requestToken=250857259&amp;_rtk=dab4c585&amp;channel=renren
+HTTP/1.1 200 OK
+</code></pre>
+
+<p>content一行就是我们需要完整发送的东西，可以猜测hostid是每个人人用户对应的一个id，requestToken和_rkt就是我们自己post form数据时缺少的内容，所以发送状态没有成功。在网页的html源码里,有个js脚本中正好有我的requestToken和_rtk的值,可以猜测它就是每次浏览器submit添加进的。那么我们只要自己解析登录之后网页的html源码，找到这两个值，发状态时添加进去，状态就成功发送了。</p>
+
+<p>现在回顾一下这次脚本编写的思路：</p>
+
+<p>尝试简单post表单中内容，发现失败，原因是发送的内容缺少一些信息; 那么缺少什么信息呢？抓包看到的，发现有一些隐藏的信息也需要发送过去，加上之后，成功发送。</p>
+
+<p>py代码:<a href="https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py">https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -196,6 +267,10 @@
     <section class="first odd">
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/">人人发状态脚本</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/12/start-project-euler/">Start Project Euler</a>
