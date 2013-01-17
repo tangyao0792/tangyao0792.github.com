@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Techniques | BFS The World]]></title>
-  <link href="http://tangyao0792.github.com/blog/categories/techniques/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Tricks | I am Tang Yao.]]></title>
+  <link href="http://tangyao0792.github.com/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://tangyao0792.github.com/"/>
-  <updated>2013-01-13T10:59:12+08:00</updated>
+  <updated>2013-01-17T22:55:15+08:00</updated>
   <id>http://tangyao0792.github.com/</id>
   <author>
     <name><![CDATA[Tang Yao]]></name>
@@ -18,7 +18,9 @@
     <link href="http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/"/>
     <updated>2013-01-13T10:25:00+08:00</updated>
     <id>http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben</id>
-    <content type="html"><![CDATA[<p>几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。</p>
+    <content type="html"><![CDATA[<p>一直都对写爬虫挺感兴趣。</p>
+
+<p>几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。</p>
 
 <p>登陆很容易就实现了。发状态的功能之前3g版的脚本思路是找到form，把该填的内容自己urlencode,然后post去action的地址;网页版不同的地方是网页版的html源码很复杂，submit还会调js。</p>
 
@@ -42,7 +44,9 @@ HTTP/1.1 200 OK
 
 <p>尝试简单post表单中内容，发现失败，原因是发送的内容缺少一些信息; 那么缺少什么信息呢？抓包看到的，发现有一些隐藏的信息也需要发送过去，加上之后，成功发送。</p>
 
-<p>py代码:<a href="https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py">https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py</a></p>
+<p>py代码:<a href="https://github.com/tangyao0792/Spiders/blob/master/RenrenSpiders/publicStatus.py">https://github.com/tangyao0792/Spiders/blob/master/RenrenSpiders/publicStatus.py</a></p>
+
+<p>ps:我写了个死循环发状态，然后打了个电话，回来之后发现已经发了1w+次状态...</p>
 ]]></content>
   </entry>
   

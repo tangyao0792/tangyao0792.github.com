@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[BFS The World]]></title>
+  <title><![CDATA[I am Tang Yao.]]></title>
   <link href="http://tangyao0792.github.com/atom.xml" rel="self"/>
   <link href="http://tangyao0792.github.com/"/>
-  <updated>2013-01-13T10:59:12+08:00</updated>
+  <updated>2013-01-17T22:55:15+08:00</updated>
   <id>http://tangyao0792.github.com/</id>
   <author>
     <name><![CDATA[Tang Yao]]></name>
@@ -18,7 +18,9 @@
     <link href="http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/"/>
     <updated>2013-01-13T10:25:00+08:00</updated>
     <id>http://tangyao0792.github.com/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben</id>
-    <content type="html"><![CDATA[<p>几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。</p>
+    <content type="html"><![CDATA[<p>一直都对写爬虫挺感兴趣。</p>
+
+<p>几个月之前，写过一个py登3g人人发状态的脚本。不知什么时候3g人人登录需要一个验证码，学术不精，那个脚本就无法维护了。于是目标变成了正常网页版的人人。</p>
 
 <p>登陆很容易就实现了。发状态的功能之前3g版的脚本思路是找到form，把该填的内容自己urlencode,然后post去action的地址;网页版不同的地方是网页版的html源码很复杂，submit还会调js。</p>
 
@@ -42,7 +44,9 @@ HTTP/1.1 200 OK
 
 <p>尝试简单post表单中内容，发现失败，原因是发送的内容缺少一些信息; 那么缺少什么信息呢？抓包看到的，发现有一些隐藏的信息也需要发送过去，加上之后，成功发送。</p>
 
-<p>py代码:<a href="https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py">https://github.com/tangyao0792/RenrenSpiders/blob/master/publicStatus.py</a></p>
+<p>py代码:<a href="https://github.com/tangyao0792/Spiders/blob/master/RenrenSpiders/publicStatus.py">https://github.com/tangyao0792/Spiders/blob/master/RenrenSpiders/publicStatus.py</a></p>
+
+<p>ps:我写了个死循环发状态，然后打了个电话，回来之后发现已经发了1w+次状态&#8230;</p>
 ]]></content>
   </entry>
   
@@ -55,7 +59,7 @@ HTTP/1.1 200 OK
 
 <p>自己的思维方式太过混乱，遇到问题没有一套系统的通用的思考方式，只会乱猜乱碰，也许这就是我和那些聪明的人的差距吧。开始做 <a href="http://www.projecteuler.net">projecteuler.net</a> 上的数学题，遇到一些能够有所思考的题，记录下来。又开始刷题的目的很简单，就是思考。以前刷题的目的是过题，所以会有各种线下打表等奇淫技巧，很少花时间思考一下遇到的问题是什么，我是怎么解决的。</p>
 
-<p>让我想对思维感兴趣的是《按时间》上推荐的一本书，《How to solve it》(G.波利亚)，书里以初中的数学为例，介绍应该如何思考问题的方法。最早的数学是人们思维的游戏，尤其是数论，只是在近代才有了密码学这样的应用.很多人研究数论的问题，完全是沉浸在思维的乐趣之中。而以数学去反思思维，能最大程度屏蔽掉外界的干扰，注意力只放在单纯的数字之上。</p>
+<p>让我对思维感兴趣的是《暗时间》上推荐的一本书，《How to solve it》(G.波利亚)，书里以初中的数学为例，介绍应该如何思考问题的方法。最早的数学是人们思维的游戏，尤其是数论，只是在近代才有了密码学这样的应用.很多人研究数论的问题，完全是沉浸在思维的乐趣之中。而以数学去反思思维，能最大程度屏蔽掉外界的干扰，注意力只放在单纯的数字之上。</p>
 
 <p>博客的第二个catagory就是欧拉计划的题解了，也不能算是题解，因为我已经不是acmer了，而且记下的更多的是思考的过程。代码会放在github上，语言可能是有很多,先以py为主。</p>
 ]]></content>
