@@ -4,7 +4,7 @@
   <title><![CDATA[I am Tang Yao.]]></title>
   <link href="http://tangyao0792.github.com/atom.xml" rel="self"/>
   <link href="http://tangyao0792.github.com/"/>
-  <updated>2013-01-17T22:55:15+08:00</updated>
+  <updated>2013-01-17T23:39:00+08:00</updated>
   <id>http://tangyao0792.github.com/</id>
   <author>
     <name><![CDATA[Tang Yao]]></name>
@@ -47,6 +47,28 @@ HTTP/1.1 200 OK
 <p>py代码:<a href="https://github.com/tangyao0792/Spiders/blob/master/RenrenSpiders/publicStatus.py">https://github.com/tangyao0792/Spiders/blob/master/RenrenSpiders/publicStatus.py</a></p>
 
 <p>ps:我写了个死循环发状态，然后打了个电话，回来之后发现已经发了1w+次状态&#8230;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Something Interesting]]></title>
+    <link href="http://tangyao0792.github.com/blog/2013/01/13/something-interesting/"/>
+    <updated>2013-01-13T00:03:00+08:00</updated>
+    <id>http://tangyao0792.github.com/blog/2013/01/13/something-interesting</id>
+    <content type="html"><![CDATA[<h3>I&#8217;m dread lord, not drug lord. 我是恐惧魔王，不是毒品大王</h3>
+
+<p>魔兽中有这么个彩蛋，选一个单位，对着他一通狂点，过一会他就会说一些有意思的话。比如大G会抱怨你为什么一直戳他而不去管理军队，狂点小动物,小动物就会爆炸，狂点恐惧魔王，会听到一个人打电话给恐惧魔王要买毒品。</p>
+
+<p>会不会在我的blog的某个地方狂点，也会有有意思的东西出现? : )</p>
+
+<h3>How long is too long for you?</h3>
+
+<p>一次突发奇想，既然有long long,那么是否有 long long long 呢？试之，发现gcc告诉我:</p>
+
+<pre><code>'long long long' is too long for GCC   
+</code></pre>
+
+<p>太多的时间花在无趣的东西上，比如上课上班排队，是件多么浪费生命的事。作为即将趟IT界浑水的人，在时间被代码吞噬之时，多创造有趣的事，让生活有趣，时间可没有 too long for me.</p>
 ]]></content>
   </entry>
   

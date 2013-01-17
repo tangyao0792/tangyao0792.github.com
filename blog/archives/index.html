@@ -10,9 +10,9 @@
 
   
   <meta name="description" content="Blog Archive 2013 人人发状态脚本
-Jan 13 2013 posted in Tricks Start Project Euler
-Jan 12 2013 posted in ProjectEular Hello World
-Jan 12 2013 Recent Posts &hellip;">
+Jan 13 2013 posted in Tricks Something Interesting
+Jan 13 2013 posted in SoMeTHIngInTERsting Start Project Euler
+Jan 12 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -100,6 +100,20 @@ Jan 12 2013 Recent Posts &hellip;">
 
 <article>
   
+<h1><a href="/blog/2013/01/13/something-interesting/">Something Interesting</a></h1>
+<time datetime="2013-01-13T00:03:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>13</span> <span class='year'>2013</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/somethingintersting/'>SoMeTHIngInTERsting</a></span>
+</footer>
+
+
+</article>
+
+
+
+<article>
+  
 <h1><a href="/blog/2013/01/12/start-project-euler/">Start Project Euler</a></h1>
 <time datetime="2013-01-12T23:55:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>12</span> <span class='year'>2013</span></time>
 
@@ -138,6 +152,10 @@ Jan 12 2013 Recent Posts &hellip;">
       </li>
     
       <li class="post">
+        <a href="/blog/2013/01/13/something-interesting/">Something Interesting</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/12/start-project-euler/">Start Project Euler</a>
       </li>
     
@@ -146,6 +164,35 @@ Jan 12 2013 Recent Posts &hellip;">
       </li>
     
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/tangyao0792">@tangyao0792</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'tangyao0792',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
