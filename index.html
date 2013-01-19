@@ -9,7 +9,13 @@
   <meta name="author" content="Tang Yao">
 
   
-  <meta name="description" content="I&#8217;m dread lord, not drug lord. 我是恐惧魔王，不是毒品大王 魔兽中有这么个彩蛋，选一个单位，对着他一通狂点，过一会他就会说一些有意思的话。比如大G会抱怨你为什么一直戳他而不去管理军队，狂点小动物,小动物就会爆炸，狂点恐惧魔王， &hellip;">
+  <meta name="description" content="看到一个搞笑的shell脚本实现的排序算法sleep sort: #!/bin/bash
+function f() { sleep "$1" echo "$1"
+}
+while [ -n "$1" ]
+do f "$1" &amp; shift
+done
+wait &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +74,83 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/19/sleep-sort/">Sleep Sort</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-19T17:04:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2013</time>
+        
+        
+          | 
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/somethingintersting/'>SoMeTHIngInTERsting</a>
+  
+</span>
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>看到一个搞笑的shell脚本实现的排序算法sleep sort:</p>
+
+<pre><code>#!/bin/bash
+function f() {
+    sleep "$1"
+    echo "$1"
+}
+while [ -n "$1" ]
+do
+    f "$1" &amp;
+    shift
+done
+wait
+</code></pre>
+
+<p>写了个python版本的sleep sort</p>
+
+<pre><code>import time
+import thread
+
+
+def timer(x):
+    time.sleep(x)
+    print x
+
+if __name__ == '__main__':
+    arr = map(int, raw_input('input:    ').split(' '))
+    for x in arr:
+        thread.start_new_thread(timer, (x,))
+    time.sleep(max(arr)+1)
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -333,6 +416,10 @@ HTTP/1.1 200 OK
     <section class="first odd">
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/19/sleep-sort/">Sleep sort</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/17/something-instersting/">Something Interesting</a>

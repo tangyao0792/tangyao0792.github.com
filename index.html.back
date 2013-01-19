@@ -9,7 +9,7 @@
   <meta name="author" content="Tang Yao">
 
   
-  <meta name="description" content="Blog Archives Recent Posts Something Interesting 人人发状态脚本 Start Project Euler Hello World GitHub Repos Status updating... @tangyao0792 on GitHub $. &hellip;">
+  <meta name="description" content="Blog Archives Recent Posts Sleep sort Something Interesting 人人发状态脚本 Start Project Euler Hello World GitHub Repos Status updating... @tangyao0792 on &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,10 @@
     <section class="first odd">
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/19/sleep-sort/">Sleep sort</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/17/something-instersting/">Something Interesting</a>

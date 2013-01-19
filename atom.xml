@@ -4,7 +4,7 @@
   <title><![CDATA[I am Tang Yao.]]></title>
   <link href="http://tangyao0792.github.com/atom.xml" rel="self"/>
   <link href="http://tangyao0792.github.com/"/>
-  <updated>2013-01-18T14:05:27+08:00</updated>
+  <updated>2013-01-19T17:22:28+08:00</updated>
   <id>http://tangyao0792.github.com/</id>
   <author>
     <name><![CDATA[Tang Yao]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sleep sort]]></title>
+    <link href="http://tangyao0792.github.com/blog/2013/01/19/sleep-sort/"/>
+    <updated>2013-01-19T17:04:00+08:00</updated>
+    <id>http://tangyao0792.github.com/blog/2013/01/19/sleep-sort</id>
+    <content type="html"><![CDATA[<p>看到一个搞笑的shell脚本实现的排序算法sleep sort:</p>
+
+<pre><code>#!/bin/bash
+function f() {
+    sleep "$1"
+    echo "$1"
+}
+while [ -n "$1" ]
+do
+    f "$1" &amp;
+    shift
+done
+wait
+</code></pre>
+
+<p>写了个python版本的sleep sort</p>
+
+<pre><code>import time
+import thread
+
+
+def timer(x):
+    time.sleep(x)
+    print x
+
+if __name__ == '__main__':
+    arr = map(int, raw_input('input:    ').split(' '))
+    for x in arr:
+        thread.start_new_thread(timer, (x,))
+    time.sleep(max(arr)+1)
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Something Interesting]]></title>

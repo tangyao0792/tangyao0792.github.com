@@ -5,11 +5,17 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Something Interesting - I am Tang Yao.</title>
+  <title>Sleep sort - I am Tang Yao.</title>
   <meta name="author" content="Tang Yao">
 
   
-  <meta name="description" content="I&#8217;m dread lord, not drug lord. 我是恐惧魔王，不是毒品大王 魔兽中有这么个彩蛋，选一个单位，对着他一通狂点，过一会他就会说一些有意思的话。比如大G会抱怨你为什么一直戳他而不去管理军队，狂点小动物,小动物就会爆炸，狂点恐惧魔王， &hellip;">
+  <meta name="description" content="看到一个搞笑的shell脚本实现的排序算法sleep sort: #!/bin/bash
+function f() { sleep "$1" echo "$1"
+}
+while [ -n "$1" ]
+do f "$1" &amp; shift
+done
+wait &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tangyao0792.github.com/blog/2013/01/17/something-instersting/">
+  <link rel="canonical" href="http://tangyao0792.github.com/blog/2013/01/19/sleep-sort/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +77,7 @@
   
   <header>
     
-      <h1 class="entry-title">Something Interesting</h1>
+      <h1 class="entry-title">Sleep Sort</h1>
     
     
       <p class="meta">
@@ -87,7 +93,7 @@
   
 
 
-<time datetime="2013-01-17T00:03:00+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+<time datetime="2013-01-19T17:04:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2013</time>
         
         
       </p>
@@ -95,22 +101,37 @@
   </header>
 
 
-<div class="entry-content"><h3>I&#8217;m dread lord, not drug lord. 我是恐惧魔王，不是毒品大王</h3>
+<div class="entry-content"><p>看到一个搞笑的shell脚本实现的排序算法sleep sort:</p>
 
-<p>魔兽中有这么个彩蛋，选一个单位，对着他一通狂点，过一会他就会说一些有意思的话。比如大G会抱怨你为什么一直戳他而不去管理军队，狂点小动物,小动物就会爆炸，狂点恐惧魔王，会听到一个人打电话给恐惧魔王要买毒品。</p>
-
-<p>会不会在我的blog的某个地方狂点，也会有有意思的东西出现? : )</p>
-
-<h3>How long is too long for you?</h3>
-
-<p>一次突发奇想，既然有long long,那么是否有 long long long 呢？试之，发现gcc告诉我:</p>
-
-<pre><code>'long long long' is too long for GCC   
+<pre><code>#!/bin/bash
+function f() {
+    sleep "$1"
+    echo "$1"
+}
+while [ -n "$1" ]
+do
+    f "$1" &amp;
+    shift
+done
+wait
 </code></pre>
 
-<p>太多的时间花在无趣的东西上，比如上课上班排队，是件多么浪费生命的事。作为即将趟IT界浑水的人，在时间被代码吞噬之时，多创造有趣的事，让生活有趣，时间可没有 too long for me.</p>
+<p>写了个python版本的sleep sort</p>
 
-<p>新catagory, something interesting.</p>
+<pre><code>import time
+import thread
+
+
+def timer(x):
+    time.sleep(x)
+    print x
+
+if __name__ == '__main__':
+    arr = map(int, raw_input('input:    ').split(' '))
+    for x in arr:
+        thread.start_new_thread(timer, (x,))
+    time.sleep(max(arr)+1)
+</code></pre>
 </div>
 
 
@@ -133,7 +154,7 @@
   
 
 
-<time datetime="2013-01-17T00:03:00+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+<time datetime="2013-01-19T17:04:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -154,10 +175,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/01/13/ren-ren-fa-zhuang-tai-jiao-ben/" title="Previous Post: 人人发状态脚本">&laquo; 人人发状态脚本</a>
+        <a class="basic-alignment left" href="/blog/2013/01/17/something-instersting/" title="Previous Post: Something Interesting">&laquo; Something Interesting</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/01/19/sleep-sort/" title="Next Post: Sleep sort">Sleep sort &raquo;</a>
       
     </p>
   </footer>
